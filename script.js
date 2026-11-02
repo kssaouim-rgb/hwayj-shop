@@ -1,5 +1,9 @@
-function zidlpanier(bouton) {
+function zidlpanier(bouton, taman) {
     let produit = bouton.parentElement;
-    let element = produit.querySelector(".compteur");
-    element.innerHTML = Number(element.innerHTML) + 1;
+    let compteur = produit.querySelector(".compteur");
+    let sousTotal = produit.querySelector(".sous-total");
+
+    let nombre = Number(compteur.innerHTML) + 1;
+    compteur.innerHTML = nombre;
+    sousTotal.innerHTML = nombre * taman;
 }

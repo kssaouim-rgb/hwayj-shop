@@ -21,6 +21,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
         }
         nav P {
             margin: 0;
@@ -30,8 +32,7 @@
             color: white;
             text-decoration: none;
         }
-
-        ul {
+         ul {
             list-style: none;
             display: flex;
             gap: 20px;
@@ -85,6 +86,7 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
         
+        
     </nav>
     <section id="accueil">
         <h2>Accueil</h2>
@@ -99,8 +101,8 @@
             <h3>SBAT CLAS</h3>
             <img src="sbat.jpg" alt="SBAT CLAS">
             <P>75 DH / 1 </P>
-            <button onclick="zidlpanier(this)">zid l panier</button>
-            <p>🛒 Panier: <span class="compteur">0</span></p>
+            <button onclick="zidlpanier(this, 75)">zid l panier</button>
+            <p>🛒 Panier: <span class="compteur">0</span> = <span class="sous-total">0</span> DH</p>
         </div>
 
 
@@ -109,8 +111,8 @@
             <h3>SBAT CLAS</h3>
             <img src="sbat.jpg" alt="SBAT CLAS">
             <P>75 DH / 1 </P>
-              <button onclick="zidlpanier(this)">zid l panier</button>
-               <p>🛒 Panier: <span class="compteur">0</span></p>
+              <button onclick="zidlpanier(this, 75)">zid l panier</button>
+                <p>🛒 Panier: <span class="compteur">0</span> = <span class="sous-total">0</span> DH</p>
         </div>
 
 
@@ -119,8 +121,8 @@
             <h3>SBAT CLAS</h3>
             <img src="sbat.jpg" alt="SBAT CLAS">
             <P>75 DH / 1 </P>
-              <button onclick="zidlpanier(this)">zid l panier</button>
-               <p>🛒 Panier: <span class="compteur">0</span></p>
+              <button onclick="zidlpanier(this, 75)">zid l panier</button>
+                <p>🛒 Panier: <span class="compteur">0</span> = <span class="sous-total">0</span> DH</p>
         </div>
 
 
@@ -129,8 +131,8 @@
             <h3>SBAT CLAS</h3>
             <img src="sbat.jpg" alt="SBAT CLAS">
             <P>75 DH / 1 </P>
-              <button onclick="zidlpanier(this)">zid l panier</button>
-                <p>🛒 Panier: <span class="compteur">0</span></p>
+              <button onclick="zidlpanier(this, 75)">zid l panier</button>
+                 <p>🛒 Panier: <span class="compteur">0</span> = <span class="sous-total">0</span> DH</p>
         </div>
 
 
@@ -139,8 +141,8 @@
         <h3> SNDALA CLAS</h3>
         <img src="sendala.jpg" alt="SNDALA CLAS">
             <P>75 DH / 1</P>
-              <button onclick="zidlpanier(this)">zid l panier</button>
-              <p>🛒 Panier: <span class="compteur">0</span></p>
+              <button onclick="zidlpanier(this, 75)">zid l panier</button>
+               <p>🛒 Panier: <span class="compteur">0</span> = <span class="sous-total">0</span> DH</p>
         </div>
 
 
@@ -149,8 +151,8 @@
         <h3> SNDALA CLAS</h3>
         <img src="sendala.jpg" alt="SNDALA CLAS">
             <P>75 DH / 1</P>
-              <button onclick="zidlpanier(this)">zid l panier</button>
-              <p>🛒 Panier: <span class="compteur">0</span></p>
+              <button onclick="zidlpanier(this, 75)">zid l panier</button>
+               <p>🛒 Panier: <span class="compteur">0</span> = <span class="sous-total">0</span> DH</p>
         </div>
 
 
@@ -159,8 +161,8 @@
         <h3> SNDALA CLAS</h3>
         <img src="sendala.jpg" alt="SNDALA CLAS">
             <P>75 DH / 1</P>
-              <button onclick="zidlpanier(this)">zid l panier</button>
-              <p>🛒 Panier: <span class="compteur">0</span></p>
+              <button onclick="zidlpanier(this, 75)">zid l panier</button>
+               <p>🛒 Panier: <span class="compteur">0</span> = <span class="sous-total">0</span> DH</p>
         </div>
 
          
@@ -168,8 +170,8 @@
         <h3> SNDALA CLAS</h3>
         <img src="sendala.jpg" alt="SNDALA CLAS">
             <P>75 DH / 1</P>
-              <button onclick="zidlpanier(this)">zid l panier</button>
-              <p>🛒 Panier: <span class="compteur">0</span></p>
+              <button onclick="zidlpanier(this, 75)">zid l panier</button>
+               <p>🛒 Panier: <span class="compteur">0</span> = <span class="sous-total">0</span> DH</p>
         </div>
 
 
@@ -177,17 +179,8 @@
         <h3> KSAWI CLAS</h3>
         <img src="ksawi.jpg" alt="KSAWI CLAS">
             <P>75 DH / 1</P>
-              <button onclick="zidlpanier(this)">zid l panier</button>
-              <p>🛒 Panier: <span class="compteur">0</span></p>
-        </div>
-
-        
-         <div class="produit">
-        <h3> KSAWI CLAS</h3>
-        <img src="ksawi.jpg" alt="KSAWI CLAS">
-            <P>75 DH / 1</P>
-              <button onclick="zidlpanier(this)">zid l panier</button>
-              <p>🛒 Panier: <span class="compteur">0</span></p>
+              <button onclick="zidlpanier(this, 75)">zid l panier</button>
+               <p>🛒 Panier: <span class="compteur">0</span> = <span class="sous-total">0</span> DH</p>
         </div>
 
         
@@ -195,8 +188,17 @@
         <h3> KSAWI CLAS</h3>
         <img src="ksawi.jpg" alt="KSAWI CLAS">
             <P>75 DH / 1</P>
-              <button onclick="zidlpanier(this)">zid l panier</button>
-              <p>🛒 Panier: <span class="compteur">0</span></p>
+              <button onclick="zidlpanier(this, 75)">zid l panier</button>
+               <p>🛒 Panier: <span class="compteur">0</span> = <span class="sous-total">0</span> DH</p>
+        </div>
+
+        
+         <div class="produit">
+        <h3> KSAWI CLAS</h3>
+        <img src="ksawi.jpg" alt="KSAWI CLAS">
+            <P>75 DH / 1</P>
+              <button onclick="zidlpanier(this, 75)">zid l panier</button>
+               <p>🛒 Panier: <span class="compteur">0</span> = <span class="sous-total">0</span> DH</p>
         </div>
         
         
