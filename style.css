@@ -114,4 +114,29 @@ html, body {
     overflow-x: clip;
     touch-action: manipulation;
 }
-    
+    footer {
+    background-color: #f2f2f2;
+    padding: 30px 20px 10px;
+    margin-top: 30px;
+}
+.colonne {
+    margin-bottom: 25px;
+}
+.colonne h3 {
+    margin: 0 0 12px;
+    font-size: 20px;
+}
+.colonne a {
+    display: block;
+    color: #555;
+    text-decoration: none;
+    padding: 8px 0;
+    letter-spacing: 1px;
+}
+.copyright {
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
