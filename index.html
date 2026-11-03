@@ -22,7 +22,7 @@
             color: white;
             padding: 15px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             position: sticky;
             top: 0;
@@ -84,7 +84,21 @@
 nav a {
     font-size: 18px;
 }
-    
+    @media (max-width: 600px) {
+    .produit {
+        width: 130px;
+        padding: 10px;
+        margin: 5px;
+    }
+    .produit img {
+        width: 100%;
+        height: 160px;
+    }
+    .liste-produit {
+        justify-content: center;
+        gap: 5px;
+    }
+}
     </style>
 </head>
 
