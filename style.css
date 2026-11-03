@@ -53,8 +53,18 @@ header {
     border-top: 1px solid #eee;
     letter-spacing: 1px;
 }
+#menu h3 {
+    margin: 0;
+    padding: 15px 15px 5px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #777;
+    border-top: 1px solid #eee;
+}
 #menu.ouvert {
-    max-height: 200px;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .produit {
