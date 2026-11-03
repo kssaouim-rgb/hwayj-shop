@@ -140,3 +140,6 @@ html, body {
     border-top: 1px solid #ddd;
     padding-top: 15px;
 }
+section, h3 {
+    scroll-margin-top: 70px;
+}
