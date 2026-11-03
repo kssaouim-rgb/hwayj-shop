@@ -39,9 +39,12 @@ header {
     text-decoration: none;
 }
 #menu {
-    display: none;
+    display: flex;
     flex-direction: column;
     background-color: white;
+    max-height: 0;
+    overflow: hidden;
+     transition: max-height 0.3s ease;
 }
 #menu a {
     padding: 15px;
@@ -51,7 +54,7 @@ header {
     letter-spacing: 1px;
 }
 #menu.ouvert {
-    display: flex;
+    max-height: 200px;
 }
 
 .produit {
