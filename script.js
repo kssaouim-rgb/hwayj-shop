@@ -46,3 +46,7 @@ function envoyerCommande() {
     let lien = "https://wa.me/2120631599100?text=" + encodeURIComponent(message);
     window.open(lien, "_blank");
 }
+function basculerMenu() {
+    let menu = document.getElementById("menu");
+    menu.classList.toggle("ouvert");
+}
