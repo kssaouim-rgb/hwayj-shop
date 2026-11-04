@@ -62,3 +62,7 @@ function fermerInfo() {
         info.classList.remove("visible");
     }
 }
+function allerA(id) {
+    document.getElementById("menu").classList.remove("ouvert");
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+}
