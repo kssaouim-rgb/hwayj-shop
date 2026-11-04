@@ -50,3 +50,15 @@ function basculerMenu() {
     let menu = document.getElementById("menu");
     menu.classList.toggle("ouvert");
 }
+function ouvrirInfo(id) {
+    fermerInfo();
+    document.getElementById("menu").classList.remove("ouvert");
+    document.getElementById(id).classList.add("visible");
+}
+
+function fermerInfo() {
+    let infos = document.querySelectorAll(".info");
+    for (let info of infos) {
+        info.classList.remove("visible");
+    }
+}

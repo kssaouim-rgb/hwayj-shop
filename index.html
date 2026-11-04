@@ -21,9 +21,9 @@
             <a href="#produits" onclick="basculerMenu()">Produits</a>
             <a href="#contact" onclick="basculerMenu()">Contact</a>
             <h3>Aide</h3>
-    <a href="#livraison" onclick="basculerMenu()">Livraison</a>
-    <a href="#retours" onclick="basculerMenu()">Retours et échanges</a>
-    <a href="#faq" onclick="basculerMenu()">Questions fréquentes</a>
+             <a href="#" onclick="ouvrirInfo('livraison'); return false;">Livraison</a>
+             <a href="#" onclick="ouvrirInfo('retours'); return false;">Retours et échanges</a>
+             <a href="#" onclick="ouvrirInfo('faq'); return false;">Questions fréquentes</a>
     <h3>Suivez-nous</h3>
     <a href="https://wa.me/212631599100" target="_blank">WhatsApp</a>
     <a href="https://instagram.com/USERNAME" target="_blank">Instagram</a>
@@ -117,22 +117,35 @@
 
 
 </section>
-<section id="infos">
-    <h2>Infos</h2>
-
-    <h3 id="livraison">Livraison</h3>
-    <p>Nous livrons partout au Maroc sous 1 à 3 jours ouvrables.</p>
+<div class="info" id="livraison">
+    <div class="info-contenu">
+        <button class="fermer" onclick="fermerInfo()">✕</button>
+        <h3>Livraison</h3>
+        <p>Nous livrons partout au Maroc sous 1 à 3 jours ouvrables.</p>
    <p> Frais de livraison : 20 DH à Tanger, 35 DH dans les autres villes.</p>
-   <h3 id="retours">Retours et échanges</h3>
-    <p>Vous disposez de 48 heures après réception pour demander un échange, 
+    </div>
+</div>
+
+<div class="info" id="retours">
+    <div class="info-contenu">
+        <button class="fermer" onclick="fermerInfo()">✕</button>
+        <h3>Retours et échanges</h3>
+         <p>Vous disposez de 48 heures après réception pour demander un échange, 
     à condition que l'article soit neuf et dans son état d'origine.</p>
    <p>Contactez-nous sur WhatsApp pour organiser l'échange.</p>
-    <h3 id="faq">Questions fréquentes</h3>
-    <p>Comment commander ?</p>
+    </div>
+</div>
+
+<div class="info" id="faq">
+    <div class="info-contenu">
+        <button class="fermer" onclick="fermerInfo()">✕</button>
+        <h3>Questions fréquentes</h3>
+        <p>Comment commander ?</p>
     <p>Ajoutez vos articles au panier, puis envoyez votre commande via WhatsApp.</p>
     <p>Comment payer ?</p>
     <p>Le paiement s'effectue en espèces à la livraison.</p>
-</section>
+    </div>
+</div>
    
     <footer id="contact">
     <div class="colonne">
