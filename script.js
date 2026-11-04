@@ -47,12 +47,14 @@ function envoyerCommande() {
     window.open(lien, "_blank");
 }
 function basculerMenu() {
-    let menu = document.getElementById("menu");
-    menu.classList.toggle("ouvert");
+    document.getElementById("menu").classList.toggle("ouvert");
+    document.getElementById("fond").classList.toggle("visible");
 }
+
 function ouvrirInfo(id) {
     fermerInfo();
     document.getElementById("menu").classList.remove("ouvert");
+    document.getElementById("fond").classList.remove("visible");
     document.getElementById(id).classList.add("visible");
 }
 
@@ -64,5 +66,6 @@ function fermerInfo() {
 }
 function allerA(id) {
     document.getElementById("menu").classList.remove("ouvert");
+    document.getElementById("fond").classList.remove("visible");
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
