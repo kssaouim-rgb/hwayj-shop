@@ -37,6 +37,7 @@ header {
 .icone-panier {
     font-size: 26px;
     text-decoration: none;
+    position: relative;
 }
 
    #menu {
@@ -256,4 +257,18 @@ section, h3 {
 
 #fond.visible {
     display: block;
+}
+#badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    min-width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 50%;
 }

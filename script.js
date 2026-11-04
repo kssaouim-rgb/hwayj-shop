@@ -6,6 +6,7 @@ function zidlpanier (bouton, taman) {
     let nombre = Number(compteur.innerHTML) + 1;
     compteur.innerHTML = nombre;
     sousTotal.innerHTML = nombre * taman;
+        sauvegarder();
 }
 function n9es(bouton, taman) {
     let produit = bouton.parentElement;
@@ -18,6 +19,7 @@ function n9es(bouton, taman) {
     }
     compteur.innerHTML = nombre;
     sousTotal.innerHTML = nombre * taman;
+        sauvegarder();
 }
 
 function envoyerCommande() {
@@ -69,3 +71,34 @@ function allerA(id) {
     document.getElementById("fond").classList.remove("visible");
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
+function majBadge() {
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+    let somme = 0;
+    for (let ligne of panier) {
+        somme = somme + Number(ligne.nombre);
+    }
+    document.getElementById("badge").innerHTML = somme;
+}
+function sauvegarder() {
+    let produits = document.querySelectorAll(".produit");
+    let panier = [];
+    for (let produit of produits) {
+        let nombre = produit.querySelector(".compteur").innerHTML;
+        let total = produit.querySelector(".sous-total").innerHTML;
+        panier.push({ nombre: nombre, total: total });
+    }
+    localStorage.setItem("panier", JSON.stringify(panier));
+    majBadge();
+}
+function charger() {
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+    let produits = document.querySelectorAll(".produit");
+    for (let i = 0; i < produits.length; i++) {
+        if (panier[i]) {
+            produits[i].querySelector(".compteur").innerHTML = panier[i].nombre;
+            produits[i].querySelector(".sous-total").innerHTML = panier[i].total;
+        }
+    }
+}
+charger();
+majBadge();
