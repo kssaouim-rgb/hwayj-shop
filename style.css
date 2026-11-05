@@ -300,3 +300,36 @@ section, h3 {
     font-weight: bold;
     letter-spacing: 1px;
 }
+.mizat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 15px 30px;
+}
+
+.mizat-boite {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 20px 15px;
+    width: 150px;
+    text-align: center;
+}
+
+.mizat-boite span {
+    font-size: 30px;
+}
+
+.mizat-boite h3 {
+    margin: 10px 0 5px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mizat-boite p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+}
