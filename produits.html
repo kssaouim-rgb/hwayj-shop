@@ -19,11 +19,20 @@
            </header>
            
            <section id="produits">
-        <h2>Produits</h2>
-        <p>أحذية وحقائب نسائية</p>
+        <div class="titre-page">
+    <h2>Notre Collection</h2>
+    <div class="trait"></div>
+    <p>أحذية وحقائب نسائية</p>
+</div>
+<div class="filtres">
+    <button class="filtre actif" onclick="filtrer('tous', this)">Tous</button>
+    <button class="filtre" onclick="filtrer('sac', this)">Sacs</button>
+    <button class="filtre" onclick="filtrer('chaussure', this)">Chaussures</button>
+</div>
 
  <div class="liste-produit">
         <div class="produit">
+            <div class="produit" data-categorie="chaussure"></div>
             <h3>MGO Kidss</h3>
             <img src="MGO Kidss.jpeg/WhatsApp Image 2026-11-05 at 16.40.37 (1).jpeg" alt="MGO KIDSS" onclick="ouvrirGalerie(this)">
             <img src="MGO Kidss.jpeg/WhatsApp Image 2026-11-05 at 16.40.37 (2).jpeg" alt="MGO Kidss">
@@ -44,6 +53,7 @@
 
         <div class="liste-produit">
         <div class="produit">
+            <div class="produit" data-categorie="sac"></div>
             <h3>SAK 4</h3>
             <img src="SAK4.jpeg" alt="SAK 4">
             <P>150 DH / 1 </P>
@@ -55,6 +65,7 @@
       
         <div class="produit">
             <h3>SAK 8</h3>
+            <div class="produit" data-categorie="sac"></div>
             <img src="SAK8.jpeg" alt="SAK 8">
             <P>140 DH / 1 </P>
             <button onclick="zidlpanier(this, 140)">+</button>
@@ -66,6 +77,7 @@
         
          
         <div class="produit">
+            <div class="produit" data-categorie="sac"></div>
             <h3>SAK 9</h3>
             <img src="SAK9.jpeg" alt="SAK 9">
             <P>140 DH / 1 </P>
@@ -76,6 +88,7 @@
 
      
         <div class="produit">
+            <div class="produit" data-categorie="chaussure"></div>
             <h3>SBADRI 1</h3>
             <img src="SBADRI1.jpeg" alt="SBADRI 1">
             <P>220 DH / 1 </P>
@@ -87,6 +100,7 @@
 
       
         <div class="produit">
+            <div class="produit" data-categorie="sac chaussure"></div>
             <h3>SBAT SAK</h3>
             <img src="SBAT SAK.jpeg" alt="SBAT SAK">
             <P>300 DH / 1 </P>
@@ -97,6 +111,7 @@
 
        
         <div class="produit">
+            <div class="produit" data-categorie="sac chaussure"></div>
             <h3>SBAT SAK2</h3>
             <img src="SBAT SAK2.jpeg" alt="SBAT SAK2">
             <P>300 DH / 1 </P>
@@ -108,6 +123,7 @@
 
        
         <div class="produit">
+            <div class="produit" data-categorie="chaussure"></div>
             <h3>SEBRDILA 1</h3>
             <img src="SEBRDILA1.jpeg" alt="SEBRDILA 1">
             <P>230 DH / 1 </P>

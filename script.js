@@ -186,3 +186,20 @@ function confirmerCommande() {
     let lien = "https://wa.me/212631599100?text=" + encodeURIComponent(message);
     window.open(lien, "_blank");
 }
+function filtrer(categorie, bouton) {
+    let boutons = document.querySelectorAll(".filtre");
+    for (let b of boutons) {
+        b.classList.remove("actif");
+    }
+    bouton.classList.add("actif");
+
+    let produits = document.querySelectorAll(".produit");
+    for (let produit of produits) {
+        let cat = produit.dataset.categorie || "";
+        if (categorie === "tous" || cat.includes(categorie)) {
+            produit.style.display = "";
+        } else {
+            produit.style.display = "none";
+        }
+    }
+}
