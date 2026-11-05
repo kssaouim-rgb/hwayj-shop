@@ -152,3 +152,37 @@ function ouvrirGalerie(img) {
 function fermerGalerie() {
     document.getElementById("galerie").classList.remove("visible");
 }
+function confirmerCommande() {
+    let nom = document.getElementById("cmd-nom").value.trim();
+    let tel = document.getElementById("cmd-tel").value.trim();
+    let adresse = document.getElementById("cmd-adresse").value.trim();
+
+    if (nom === "" || tel === "" || adresse === "") {
+        alert("Merci de remplir tous les champs");
+        return;
+    }
+
+    let produits = document.querySelectorAll(".produit");
+    let message = "Bonjour, je souhaite passer la commande :\n\n";
+    let prix = 0;
+
+    for (let produit of produits) {
+        let nombre = Number(produit.querySelector(".compteur").innerHTML);
+        if (nombre > 0) {
+            let nomProduit = produit.querySelector("h3").innerHTML;
+            let total = Number(produit.querySelector(".sous-total").innerHTML);
+            prix = prix + total;
+            message = message + "- " + nomProduit + " x" + nombre + " = " + total + " DH\n";
+        }
+    }
+
+    message = message + "\nPrix : " + prix + " DH";
+    message = message + "\nLivraison : " + LIVRAISON + " DH";
+    message = message + "\nTotal : " + (prix + LIVRAISON) + " DH\n";
+    message = message + "\nNom : " + nom;
+    message = message + "\nTéléphone : " + tel;
+    message = message + "\nAdresse : " + adresse;
+
+    let lien = "https://wa.me/212631599100?text=" + encodeURIComponent(message);
+    window.open(lien, "_blank");
+}
