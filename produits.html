@@ -11,33 +11,16 @@
 </head>
 <body>
     <header>
-        <div id="fond" onclick="basculerMenu()"></div>
         <div class="barre">
-            <button class="burger" onclick="basculerMenu()">☰</button>
-            <img src="logo-script.png" alt="HAMZAA MODE" class="logo-header">
-         <a href="#commande" class="icone-panier">🛒<span id="badge">0</span></a>
+        <a href="index.html" class="retour">← Accueil</a>
+        <img src="logo-script.png" alt="HAMZAA MODE" class="logo-header">
+        <a href="#commande" class="icone-panier">🛒<span id="badge">0</span></a>
         </div>
-        <nav id="menu">
-            <button class="fermer-menu" onclick="basculerMenu()">✕</button>
-            <a href="index.html">Accueil</a>
-            <a href="#" onclick="allerA('produits'); return false;">Produits</a>
-            <a href="#" onclick="allerA('contact'); return false;">Contact</a>
-
-            
-            <h3>Aide</h3>
-             <a href="#" onclick="ouvrirInfo('livraison'); return false;">Livraison</a>
-             <a href="#" onclick="ouvrirInfo('retours'); return false;">Retours et échanges</a>
-             <a href="#" onclick="ouvrirInfo('faq'); return false;">Questions fréquentes</a>
-    <h3>Suivez-nous</h3>
-    <a href="https://wa.me/212631599100" target="_blank">WhatsApp</a>
-    <a href="https://instagram.com/USERNAME" target="_blank">Instagram</a>
-        </nav>
-    </header>
-
-   
-    <section id="produits">
+           </header>
+           
+           <section id="produits">
         <h2>Produits</h2>
-        <p>SBABT W SIKAN</p>
+        <p>أحذية وحقائب نسائية</p>
 
         <div class="liste-produit">
         <div class="produit">
@@ -150,25 +133,37 @@
    
     <footer id="contact">
     <div class="colonne">
-        <h3>A propos</h3>
-        <a href="#accueil">Qui sommes-nous</a>
-        <a href="#produits">Nos produits</a>
-         <p>HOUMA LHADAD: Tanger</p>
-         <p>
-    <strong>Horaires</strong><br>
-    Lundi : 10:00 - 23:00<br>
-    Mardi : 10:00 - 23:00<br>
-    Mercredi : 10:00 - 23:00<br>
-    Jeudi : 10:00 - 23:00<br>
-    Vendredi : 10:00 - 23:00<br>
-    Samedi : 10:00 - 23:00<br>
-    Dimanche : 10:00 - 23:00
-</p>
-<a href="https://wa.me/212631599100" target="_blank">Kteb lina f whatsapp</a>
+        
+        
     </div>
      <p class="copyright">© 2026 HAMZAA SHOP</p>
 </footer>
 
+<div class="cmd" id="cmd">
+    <div class="cmd-contenu">
+        <button class="fermer" onclick="fermerCommande()">✕</button>
+        <h3>Merci de remplir le formulaire pour commander</h3>
+
+        <div id="cmd-lignes"></div>
+
+        <div class="cmd-total">
+            <p>Prix <span id="cmd-prix">0 DH</span></p>
+            <p>Livraison <span id="cmd-livraison">30 DH</span></p>
+            <p class="gras">Total <span id="cmd-total">0 DH</span></p>
+        </div>
+
+        <label>Nom et prénom *</label>
+        <input type="text" id="cmd-nom" placeholder="Nom et prénom">
+
+        <label>Téléphone *</label>
+        <input type="tel" id="cmd-tel" placeholder="Téléphone">
+
+        <label>Adresse *</label>
+        <input type="text" id="cmd-adresse" placeholder="Adresse, ville">
+
+        <button class="cmd-valider" onclick="confirmerCommande()">Confirmer la commande</button>
+    </div>
+</div>
     <script src="script.js"></script>
 </body>
 
