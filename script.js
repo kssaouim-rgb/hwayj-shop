@@ -102,3 +102,53 @@ function charger() {
 }
 charger();
 majBadge();
+const LIVRAISON = 30;
+
+function ouvrirCommande() {
+    let produits = document.querySelectorAll(".produit");
+    let lignes = document.getElementById("cmd-lignes");
+    lignes.innerHTML = "";
+    let prix = 0;
+
+    for (let produit of produits) {
+        let nombre = Number(produit.querySelector(".compteur").innerHTML);
+        if (nombre > 0) {
+            let nom = produit.querySelector("h3").innerHTML;
+            let image = produit.querySelector("img").getAttribute("src");
+            let total = Number(produit.querySelector(".sous-total").innerHTML);
+            prix = prix + total;
+            lignes.innerHTML += '<div class="cmd-ligne"><img src="' + image + '"><span class="nom">' + nom + ' (x' + nombre + ')</span><span class="prix">' + total + ' DH</span></div>';
+        }
+    }
+
+    if (prix === 0) {
+        alert("L panier farigh!");
+        return;
+    }
+
+    document.getElementById("cmd-prix").innerHTML = prix + " DH";
+    document.getElementById("cmd-livraison").innerHTML = LIVRAISON + " DH";
+    document.getElementById("cmd-total").innerHTML = (prix + LIVRAISON) + " DH";
+    document.getElementById("cmd").classList.add("visible");
+}
+
+function fermerCommande() {
+    document.getElementById("cmd").classList.remove("visible");
+}
+function ouvrirGalerie(img) {
+    let produit = img.parentElement;
+    let images = produit.querySelectorAll("img");
+    let conteneur = document.getElementById("galerie-photos");
+    conteneur.innerHTML = "";
+
+    for (let image of images) {
+        conteneur.innerHTML += '<img src="' + image.getAttribute("src") + '" alt="photo produit">';
+    }
+
+    conteneur.scrollLeft = 0;
+    document.getElementById("galerie").classList.add("visible");
+}
+
+function fermerGalerie() {
+    document.getElementById("galerie").classList.remove("visible");
+}

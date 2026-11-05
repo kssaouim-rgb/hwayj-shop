@@ -22,6 +22,26 @@
         <h2>Produits</h2>
         <p>أحذية وحقائب نسائية</p>
 
+ <div class="liste-produit">
+        <div class="produit">
+            <h3>MGO Kidss</h3>
+            <img src="MGO Kidss.jpeg/WhatsApp Image 2026-11-05 at 16.40.37 (1).jpeg" alt="MGO KIDSS" onclick="ouvrirGalerie(this)">
+            <img src="MGO Kidss.jpeg/WhatsApp Image 2026-11-05 at 16.40.37 (2).jpeg" alt="MGO Kidss">
+            <img src="MGO Kidss.jpeg/WhatsApp Image 2026-11-05 at 16.40.37 (3).jpeg" alt="MGO Kidss">
+            <img src="MGO Kidss.jpeg/WhatsApp Image 2026-11-05 at 16.40.37 (4).jpeg" alt="MGO Kidss">
+            <img src="MGO Kidss.jpeg/WhatsApp Image 2026-11-05 at 16.40.37 (5).jpeg" alt="MGO Kidss">
+            <P>150 DH / 1 </P>
+            <button onclick="zidlpanier(this, 150)">+</button>
+            <button onclick="n9es(this, 150)">-</button>
+            <p>🛒 Panier: <span class="compteur">0</span> = <span class="sous-total">0</span> DH</p>
+        </div>
+
+
+
+
+
+
+
         <div class="liste-produit">
         <div class="produit">
             <h3>SAK 4</h3>
@@ -97,7 +117,7 @@
         </div>
        </div>
 
-        <button onclick="envoyerCommande()">SIFT TALAB DYALK F WhatsApp</button>
+       <button id="commande" onclick="ouvrirCommande()">Commander 🛒</button>
 
 
 </section>
@@ -164,6 +184,11 @@
         <button class="cmd-valider" onclick="confirmerCommande()">Confirmer la commande</button>
     </div>
 </div>
+<div class="galerie" id="galerie">
+    <button class="galerie-fermer" onclick="fermerGalerie()">✕</button>
+    <div class="galerie-photos" id="galerie-photos"></div>
+</div>
+
     <script src="script.js"></script>
 </body>
 
