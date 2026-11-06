@@ -203,3 +203,13 @@ function filtrer(categorie, bouton) {
         }
     }
 }
+document.addEventListener("click", function (e) {
+    let bouton = e.target.closest(".couleur, .taille");
+    if (!bouton) return;
+
+    let groupe = bouton.parentElement;
+    for (let b of groupe.children) {
+        b.classList.remove("actif");
+    }
+    bouton.classList.add("actif");
+});

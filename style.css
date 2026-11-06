@@ -630,3 +630,46 @@ section, h3 {
     display: block;
     margin: 10px auto;
 }
+.options { margin: 10px 0; }
+
+.options-titre {
+    font-size: 13px;
+    color: #777;
+    margin: 8px 0 4px;
+}
+
+.couleurs, .tailles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.produit .couleur {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    cursor: pointer;
+}
+
+.produit .couleur.actif {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #7a1c3b;
+}
+
+.produit .taille {
+    min-width: 40px;
+    padding: 8px 10px;
+    background: #fff;
+    color: #111;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.produit .taille.actif {
+    background: #7a1c3b;
+    color: #fff;
+    border-color: #7a1c3b;
+}
