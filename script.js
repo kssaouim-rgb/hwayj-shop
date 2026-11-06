@@ -40,7 +40,7 @@ function envoyerCommande() {
     }
 
     if (total === 0) {
-        alert("L panier farigh!");
+        alert("L PANIER KHAWI!");
         return;
     }
 
@@ -122,7 +122,7 @@ function ouvrirCommande() {
     }
 
     if (prix === 0) {
-        alert("L panier farigh!");
+        alert("L panier khawi!");
         return;
     }
 
