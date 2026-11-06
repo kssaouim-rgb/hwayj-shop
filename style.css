@@ -673,3 +673,46 @@ section, h3 {
     color: #fff;
     border-color: #7a1c3b;
 }
+@media (max-width: 600px) {
+    .produit {
+        padding: 10px;
+    }
+
+    .produit img {
+        height: 200px;
+        margin: 6px auto;
+    }
+
+    .produit h3 {
+        font-size: 15px;
+    }
+
+    .produit p {
+        font-size: 14px;
+        margin: 4px 0;
+    }
+
+    .produit .options-titre {
+        font-size: 12px;
+        margin: 4px 0 2px;
+    }
+
+    .couleurs, .tailles {
+        gap: 6px;
+    }
+
+    .produit .couleur {
+        width: 22px;
+        height: 22px;
+    }
+
+    .produit .taille {
+        min-width: 32px;
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+
+    .produit button {
+        padding: 6px 14px;
+    }
+}
