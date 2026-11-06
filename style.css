@@ -620,3 +620,12 @@ section, h3 {
     color: white;
     border-color: transparent;
 }
+.produit img {
+    width: 100%;
+    max-width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin: 10px auto;
+}
