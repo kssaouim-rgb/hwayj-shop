@@ -213,3 +213,54 @@ document.addEventListener("click", function (e) {
     }
     bouton.classList.add("actif");
 });
+function ouvrirContact() {
+    document.getElementById("menu").classList.remove("ouvert");
+    document.getElementById("fond").classList.remove("visible");
+    document.getElementById("contact-cmd").classList.add("visible");
+}
+
+function fermerContact() {
+    document.getElementById("contact-cmd").classList.remove("visible");
+}
+
+function choisirContact(type, bouton) {
+    let boutons = document.querySelectorAll(".choix-btn");
+    for (let b of boutons) {
+        b.classList.remove("actif");
+    }
+    bouton.classList.add("actif");
+
+    document.getElementById("contact-commande").style.display = type === "commande" ? "block" : "none";
+    document.getElementById("contact-autre").style.display = type === "autre" ? "block" : "none";
+}
+
+function envoyerContact() {
+    let estCommande = document.getElementById("contact-commande").style.display !== "none";
+    let message = document.getElementById("contact-message").value.trim();
+    let texte = "";
+
+    if (estCommande) {
+        let nom = document.getElementById("cc-nom").value.trim();
+        let tel = document.getElementById("cc-tel").value.trim();
+        if (!nom || !tel || !message) {
+            alert("Merci de remplir tous les champs");
+            return;
+        }
+        texte = "Bonjour, question sur ma commande.\n"
+              + "Nom : " + nom + "\n"
+              + "Téléphone : " + tel + "\n"
+              + "Message : " + message;
+    } else {
+        let nom = document.getElementById("ca-nom").value.trim();
+        let sujet = document.getElementById("ca-sujet").value;
+        if (!nom || !message) {
+            alert("Merci de remplir tous les champs");
+            return;
+        }
+        texte = "Bonjour, ma question concerne : " + sujet + "\n"
+              + "Nom : " + nom + "\n"
+              + "Message : " + message;
+    }
+
+    window.open("https://wa.me/212631599100?text=" + encodeURIComponent(texte), "_blank");
+}

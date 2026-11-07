@@ -21,7 +21,7 @@
             <button class="fermer-menu" onclick="basculerMenu()">✕</button>
             <a href="#" onclick="allerA('accueil'); return false;">Accueil</a>
             <a href="produits.html">Produits</a>
-            <a href="#" onclick="allerA('contact'); return false;">Contact</a>
+            <a href="#" onclick="ouvrirContact(); return false;">Contact</a>
 
 
             <h3>Aide</h3>
@@ -107,7 +107,7 @@
 </div>
    
   <footer>
-    <p class="copyright">© 2026 HAMZAA SHOP</p>
+    <p class="copyright">© 2026 HAMZAA MODE</p>
   </footer>
 <a href="https://wa.me/212631599100" target="_blank" class="bouton-flottant whatsapp">
     <img src="IMG_5244.png" alt="WhatsApp">
@@ -115,6 +115,41 @@
 <a href="https://instagram.com/hamza_mode91" target="_blank" class="bouton-flottant instagram">
     <img src="IMG_5245.png" alt="Instagram">
 </a>
+<div class="cmd" id="contact-cmd">
+    <div class="cmd-contenu">
+        <button class="fermer" onclick="fermerContact()">✕</button>
+        <h3>Comment pouvons-nous vous aider ?</h3>
+
+        <div class="choix">
+            <button class="choix-btn actif" onclick="choisirContact('commande', this)">Ma commande</button>
+            <button class="choix-btn" onclick="choisirContact('autre', this)">Autre question</button>
+        </div>
+
+        <div id="contact-commande">
+            <label>Téléphone utilisé pour la commande *</label>
+            <input type="tel" id="cc-tel" placeholder="Téléphone">
+            <label>Nom et prénom *</label>
+            <input type="text" id="cc-nom" placeholder="Nom et prénom">
+        </div>
+
+        <div id="contact-autre" style="display:none">
+            <label>Nom et prénom *</label>
+            <input type="text" id="ca-nom" placeholder="Nom et prénom">
+            <label>Sujet</label>
+            <select id="ca-sujet">
+                <option>Livraison</option>
+                <option>Retours et échanges</option>
+                <option>Un produit / stock</option>
+                <option>Autre</option>
+            </select>
+        </div>
+
+        <label>Message *</label>
+        <textarea id="contact-message" rows="4" placeholder="Votre message"></textarea>
+
+        <button class="cmd-valider" onclick="envoyerContact()">Envoyer sur WhatsApp</button>
+    </div>
+</div>
     <script src="script.js"></script>
 </body>
 
