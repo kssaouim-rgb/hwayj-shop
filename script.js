@@ -403,3 +403,14 @@ function confirmerCommande() {
     majBadge2();
     fermerCommande();
 }
+function supprimerLigne(i) {
+    let panier = lirePanier();
+    panier.splice(i, 1);
+    ecrirePanier(panier);
+
+    if (panier.length === 0) {
+        fermerCommande();
+    } else {
+        ouvrirCommande();
+    }
+}
