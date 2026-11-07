@@ -79,7 +79,7 @@ charger();
 majBadge();
 const LIVRAISON = 30;
 
-function ouvrirCommande() {
+function ouvrirCommandeAncien() {
     let produits = document.querySelectorAll(".produit");
     let lignes = document.getElementById("cmd-lignes");
     lignes.innerHTML = "";
@@ -127,7 +127,7 @@ function ouvrirGalerie(img) {
 function fermerGalerie() {
     document.getElementById("galerie").classList.remove("visible");
 }
-function confirmerCommande() {
+function confirmerCommandeAncien() {
     let nom = document.getElementById("cmd-nom").value.trim();
     let tel = document.getElementById("cmd-tel").value.trim();
     let adresse = document.getElementById("cmd-adresse").value.trim();
@@ -238,4 +238,127 @@ function envoyerContact() {
     }
 
     window.open("https://wa.me/212631599100?text=" + encodeURIComponent(texte), "_blank");
+}
+// ===== Panier avec options =====
+
+// 1) Kay9ra l panier mn l tlfon (ila khawi, kayrje3 lista khawya)
+function lirePanier() {
+    try {
+        return JSON.parse(localStorage.getItem("panier2")) || [];
+    } catch (e) {
+        return [];
+    }
+}
+
+// 2) Kay7fed l panier f l tlfon w kayzid l badge
+function ecrirePanier(panier) {
+    localStorage.setItem("panier2", JSON.stringify(panier));
+    majBadge2();
+}
+
+// 3) Kay7sseb ch7al men 7aja f l panier w kaktbha f l badge
+function majBadge2() {
+    let panier = lirePanier();
+    let total = 0;
+    for (let ligne of panier) {
+        total += ligne.qte;
+    }
+    let badge = document.getElementById("badge");
+    if (badge) {
+        badge.textContent = total;
+    }
+}
+
+// 4) L fonction l kbira: kat7ett produit f l panier
+function ajouterAuPanier(bouton, prix) {
+    let carte = bouton.closest(".produit");
+    let nom = carte.querySelector("h3").textContent;
+    let image = carte.querySelector("img").getAttribute("src");
+
+    let couleur = "";
+    let pointure = "";
+
+    // Ila produit fih couleurs, khass l client ykhtar wa7da
+    if (carte.querySelector(".couleur")) {
+        let c = carte.querySelector(".couleur.actif");
+        if (!c) {
+            alert("Choisissez une couleur");
+            return;
+        }
+        couleur = c.dataset.nom;
+    }
+
+    // Ila produit fih pointures, khass l client ykhtar wa7da
+    if (carte.querySelector(".taille")) {
+        let t = carte.querySelector(".taille.actif");
+        if (!t) {
+            alert("Choisissez une pointure");
+            return;
+        }
+        pointure = t.textContent;
+    }
+
+    let panier = lirePanier();
+    let existe = false;
+
+    // Ila nfs produit + nfs couleur + nfs pointure: zid l 9dr
+    for (let ligne of panier) {
+        if (ligne.nom === nom && ligne.couleur === couleur && ligne.pointure === pointure) {
+            ligne.qte++;
+            existe = true;
+            break;
+        }
+    }
+
+    // Ila ma kaynach: ligne jdida
+    if (!existe) {
+        panier.push({ nom: nom, image: image, prix: prix, couleur: couleur, pointure: pointure, qte: 1 });
+    }
+
+    ecrirePanier(panier);
+
+    bouton.textContent = "Ajouté ✓";
+    setTimeout(function () {
+        bouton.textContent = "Ajouter au panier";
+    }, 1200);
+}
+
+majBadge2();
+function ouvrirCommande() {
+    let panier = lirePanier();
+    let lignes = document.getElementById("cmd-lignes");
+    lignes.innerHTML = "";
+    let prix = 0;
+
+    for (let ligne of panier) {
+        let options = "";
+        if (ligne.couleur) {
+            options = ligne.couleur;
+        }
+        if (ligne.pointure) {
+            if (options) {
+                options = options + " · ";
+            }
+            options = options + "Pointure " + ligne.pointure;
+        }
+
+        lignes.innerHTML += '<div class="cmd-ligne">'
+            + '<img src="' + ligne.image + '" alt="">'
+            + '<div><p>' + ligne.nom + ' (x' + ligne.qte + ')</p>'
+            + '<small>' + options + '</small></div>'
+            + '<p>' + (ligne.prix * ligne.qte) + ' DH</p>'
+            + '</div>';
+
+        prix += ligne.prix * ligne.qte;
+    }
+
+    if (prix === 0) {
+        alert("L panier farigh!");
+        return;
+    }
+
+    document.getElementById("cmd-prix").textContent = prix + " DH";
+    document.getElementById("cmd-livraison").textContent = LIVRAISON + " DH";
+    document.getElementById("cmd-total").textContent = (prix + LIVRAISON) + " DH";
+    document.getElementById("cmd").classList.add("visible");
 }
