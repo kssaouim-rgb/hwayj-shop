@@ -362,3 +362,44 @@ function ouvrirCommande() {
     document.getElementById("cmd-total").textContent = (prix + LIVRAISON) + " DH";
     document.getElementById("cmd").classList.add("visible");
 }
+function confirmerCommande() {
+    let nom = document.getElementById("cmd-nom").value.trim();
+    let tel = document.getElementById("cmd-tel").value.trim();
+    let adresse = document.getElementById("cmd-adresse").value.trim();
+
+    if (!nom || !tel || !adresse) {
+        alert("Merci de remplir tous les champs");
+        return;
+    }
+
+    let panier = lirePanier();
+    let message = "Bonjour, je souhaite commander :\n";
+    let prix = 0;
+
+    for (let ligne of panier) {
+        let details = "";
+        if (ligne.couleur) {
+            details = details + " - " + ligne.couleur;
+        }
+        if (ligne.pointure) {
+            details = details + " - Pointure " + ligne.pointure;
+        }
+        message = message + "- " + ligne.nom + details + " x" + ligne.qte
+                + " = " + (ligne.prix * ligne.qte) + " DH\n";
+        prix = prix + ligne.prix * ligne.qte;
+    }
+
+    message = message + "\nPrix : " + prix + " DH"
+            + "\nLivraison : " + LIVRAISON + " DH"
+            + "\nTotal : " + (prix + LIVRAISON) + " DH"
+            + "\n\nNom : " + nom
+            + "\nTéléphone : " + tel
+            + "\nAdresse : " + adresse;
+
+    window.open("https://wa.me/212631599100?text=" + encodeURIComponent(message), "_blank");
+
+    // Mn b3d l'ersal: kharrej l panier w sedd popup
+    localStorage.removeItem("panier2");
+    majBadge2();
+    fermerCommande();
+}
