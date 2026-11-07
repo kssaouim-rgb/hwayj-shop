@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>HAMZAA SHOP</title>
+    <title>HAMZAA MODE</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,33 +18,28 @@
             <a href="produits.html" class="icone-panier">🛒<span id="badge">0</span></a>
         </div>
         <nav id="menu">
-            <button class="fermer-menu" onclick="basculerMenu()">✕</button>
-            <a href="#" onclick="allerA('accueil'); return false;">Accueil</a>
-            <a href="produits.html">Produits</a>
-            <a href="#" onclick="ouvrirContact(); return false;">Contact</a>
+    <button class="fermer-menu" onclick="basculerMenu()">✕</button>
 
+    <ul class="menu-liens">
+        <li><a href="#" onclick="allerA('accueil'); return false;">Accueil</a></li>
+        <li><a href="produits.html">Produits</a></li>
+        <li><a href="#" onclick="ouvrirInfo('livraison'); return false;">Livraison</a></li>
+        <li><a href="#" onclick="ouvrirInfo('retours'); return false;">Retours et échanges</a></li>
+        <li><a href="#" onclick="ouvrirInfo('faq'); return false;">Questions fréquentes</a></li>
+        <li><a href="#" onclick="ouvrirContact(); return false;">Contact</a></li>
+    </ul>
 
-            <h3>Aide</h3>
-             <a href="#" onclick="ouvrirInfo('livraison'); return false;">Livraison</a>
-             <a href="#" onclick="ouvrirInfo('retours'); return false;">Retours et échanges</a>
-             <a href="#" onclick="ouvrirInfo('faq'); return false;">Questions fréquentes</a>
-    <h3>Suivez-nous</h3>
-    <div class="reseaux">
-    <a href="https://wa.me/212631599100" target="_blank"><img src="IMG_5244.png" alt="WhatsApp"></a>
-    <a href="https://instagram.com/" target="_blank"><img src="IMG_5245.png" alt="Instagram"></a>
-</div>
-      <footer id="contact">
-    <div class="colonne">
-        <h3>Notre boutique</h3>
-        <h4>Address</h4>
-        <p>شارع المملكة العربية السعودية,طنجة</p>
-        <h3>Horaires</h3>
-        <p>Du lundi au dimanche</p>
-        <p>11H / 23H</p>
+    <div class="menu-reseaux">
+        <a href="https://wa.me/212631599100" target="_blank">
+            <img src="IMG_5244.png" alt="WhatsApp">
+            <span>WhatsApp</span>
+        </a>
+        <a href="https://instagram.com/hamza_mode91" target="_blank">
+            <img src="IMG_5245.png" alt="Instagram">
+            <span>Instagram</span>
+        </a>
     </div>
-</footer>
-
-        </nav>
+</nav>
         
 
     </header>

@@ -22,32 +22,7 @@ function n9es(bouton, taman) {
         sauvegarder();
 }
 
-function envoyerCommande() {
-    let message = "Salam, bghit ntlob:\n";
-    let total = 0;
-
-    let produits = document.querySelectorAll(".produit");
-
-    for (let produit of produits) {
-        let nom = produit.querySelector("h3").innerHTML;
-        let nombre = Number(produit.querySelector(".compteur").innerHTML);
-        let prix = Number(produit.querySelector(".sous-total").innerHTML);
-
-        if (nombre > 0) {
-            message = message + "- " + nom + " x" + nombre + " = " + prix + " DH\n";
-            total = total + prix;
-        }
-    }
-
-    if (total === 0) {
-        alert("L PANIER KHAWI!");
-        return;
-    }
-
-    message = message + "Total: " + total + " DH";
-    let lien = "https://wa.me/2120631599100?text=" + encodeURIComponent(message);
-    window.open(lien, "_blank");
-}
+   
 function basculerMenu() {
     document.getElementById("menu").classList.toggle("ouvert");
     document.getElementById("fond").classList.toggle("visible");

@@ -766,3 +766,71 @@ section, h3 {
     display: inline-block;
     padding: 0;
 }
+#menu {
+    background: #fff;
+    padding: 0;
+    overflow-y: auto;
+}
+
+#menu .fermer-menu {
+    position: static;
+    display: block;
+    background: none;
+    color: #111;
+    border: none;
+    font-size: 26px;
+    padding: 20px 24px;
+    cursor: pointer;
+}
+
+.menu-liens {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+#menu .menu-liens a {
+    display: block;
+    padding: 16px 24px;
+    font-size: 19px;
+    font-weight: 400;
+    color: #111;
+    text-decoration: none;
+    border: none;
+    letter-spacing: 0.2px;
+}
+
+#menu .menu-liens a:active {
+    background: #f5f5f5;
+}
+
+.menu-reseaux {
+    margin-top: 30px;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#menu .menu-reseaux a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    font-size: 16px;
+    color: #111;
+    text-decoration: none;
+}
+
+#menu .menu-reseaux img {
+    width: 26px;
+    height: 26px;
+}
+
+.contact-bas {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #777;
+    text-align: center;
+    line-height: 1.6;
+}
